@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            height: 100vh;
+        }
+        
+        .sidebar {
+            background-color: #1d1d1d;
+            padding: 20px;
+        }
+        
+        .menu a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .post {
+            background-color: #2a2a2a;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        
+        .post h3 {
+            margin-top: 0;
+        }
+        
+        .post img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .right-sidebar {
+            background-color: #1d1d1d;
+            padding: 20px;
+        }
+        
+        .suggested-user {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .suggested-user a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .suggested-user button {
+            background-color: #3b5998;
+            border: none;
+            color: #ffffff;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">Search</a>
+                <a href="#">Create</a>
+                <a href="#">Activity</a>
+                <a href="#">Profile</a>
+            </div>
+        </aside>
+        
+        <main class="content">
+            <div class="post">
+                <h3>@donallenii</h3>
+                <p>OMG 🎉 celebrating over 4000 followers today! Thank you! Enjoy this augmented reality real-time puppet I made.</p>
+            </div>
+            <div class="post">
+                <h3>@arcastic_us</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ352TECsOzidFP7Yd2Ll7B9ufWkIp7kY1U07HSpCbBAchBRsBbv7k_Tr9sJVj4BHGGcI&usqp=CAU" alt="Meme">
+            </div>
+            <div class="post">
+                <h3>@rsadaily</h3>
+                <p>This place is called "Sealand"...</p>
+            </div>
+        </main>
+
+        <aside class="right-sidebar">
+            <h3>Suggested for you</h3>
+            <div class="suggested-user">
+                <a href="#">@mdkhd</a>
+                <button>Follow</button>
+            </div>
+            <div class="suggested-user">
+                <a href="#">@naimj</a>
+                <button>Follow</button>
+            </div>
+            <!-- Add more suggested users as needed -->
+        </aside>
+    </div>
+</body>
+</html>
