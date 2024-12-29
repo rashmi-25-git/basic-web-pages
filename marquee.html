@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        marquee img{
+            width: 250px;
+        }
+        marquee :hover img{
+            filter: blur(100%);
+        }
+        img :hover{
+            filter: blur(100px);
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <marquee behavior="" direction="" class="m1" scrollamount="20" id="firstmarquee" onmouseover="stopScroll() " onmouseout="startAgain()">
+
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhk_H3o2gdL9IRE03OTNjUj3YmksdB-pJ20g6Z0l0vvFe8JZ5D5EwVuVd9JmDocdxbgcA&usqp=CAU" alt="image">
+                   
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKf6mJo4f5p9StM7f3_qDz2LRpvxONYtkBj42rBuZcmFsx__sF5CabJvIMwZOGisI8SIM&usqp=CAU">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhk_H3o2gdL9IRE03OTNjUj3YmksdB-pJ20g6Z0l0vvFe8JZ5D5EwVuVd9JmDocdxbgcA&usqp=CAU" alt="image">
+       
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKf6mJo4f5p9StM7f3_qDz2LRpvxONYtkBj42rBuZcmFsx__sF5CabJvIMwZOGisI8SIM&usqp=CAU">
+    </marquee>
+    <br>
+    <br>
+    <marquee ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhk_H3o2gdL9IRE03OTNjUj3YmksdB-pJ20g6Z0l0vvFe8JZ5D5EwVuVd9JmDocdxbgcA&usqp=CAU" alt="image">
+                   
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKf6mJo4f5p9StM7f3_qDz2LRpvxONYtkBj42rBuZcmFsx__sF5CabJvIMwZOGisI8SIM&usqp=CAU">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhk_H3o2gdL9IRE03OTNjUj3YmksdB-pJ20g6Z0l0vvFe8JZ5D5EwVuVd9JmDocdxbgcA&usqp=CAU" alt="image">
+       
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKf6mJo4f5p9StM7f3_qDz2LRpvxONYtkBj42rBuZcmFsx__sF5CabJvIMwZOGisI8SIM&usqp=CAU">
+    </marquee>
+
+    <br>
+    <br>
+    <hr>
+    <script>
+        let marquee =document.getElementById('firstmarquee')
+        function stopScroll(){
+            marquee.stop();
+        }
+        function startAgain(){
+            marquee.start();
+        }
+    </script>
+    
+
+    
+</body>
+</html>
