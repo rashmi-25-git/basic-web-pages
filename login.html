@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 300px;
+        }
+        .container img {
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .container form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .container form a {
+            color: #f60;
+            text-decoration: none;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .container form button {
+            background-color: #f60;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .container form button:hover {
+            background-color: #e55a00;
+        }
+        .container .terms {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        .container .terms a {
+            color: #888;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="data:image/png;base64,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" alt="Sign Up Image" width="50" height="50">
+        <h2>Sign up</h2>
+        <form action="/signup" method="post">
+            <input type="tel" name="phone" placeholder="Phone number" required>
+            <br>
+            
+            <input type="text" name="name" placeholder="Name" required>
+            <br>
+            
+            <input type="email" name="email" placeholder="Email" required>
+            <br>
+            
+            <input type="password" name="password" placeholder="Password" required>
+            <br>
+            
+            <a href="#">Have a referral code?</a>
+            <br>
+            
+            <button type="submit">CONTINUE</button>
+            <br>
+           
+        </form>
+        <div class="terms">
+            By creating an account, I accept the <a href="#">Terms & Conditions</a>
+            <br>
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background-color: white;
+            color: rgb(17, 14, 14);
+            padding: 50px;
+           
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            background-color: white
+        }
+        .header a {
+            text-decoration: none;
+            color: #141313;
+            margin: 0 10px;
+        }
+        .header .cart {
+            color: rgb(14, 13, 13);
+        }
+        .main {
+            padding: 50px 20px;
+        }
+        .main h1 {
+            margin-bottom: 20px;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            border: 0px solid gray;
+            background-color: rgb(231, 225, 225);
+        }
+        .category {
+            text-align: center;
+        }
+        .category img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .categories, .restaurant-chains {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .categories div, .restaurant-chains div {
+            margin: 10px;
+            padding: 20px;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .categories img, .restaurant-chains img {
+            width: 100px;
+            height: 100px;
+        }
+        .restaurant-chains img {
+            width: 200px;
+        }
+       
+        .app img{
+            width: 200px;
+            height: 100px;
+            align-items: center;
+            margin: auto;
+            
+
+        }
+        main :hover{
+            filter: blur(20%);
+            background-color: gray;
+        }
+        
+        .footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer div {
+            margin: 10px;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer h3 {
+            margin-top: 0;
+        }
+        .footer img {
+            margin-right: 10px;
+        }
+        
+        categories category:hover {
+            filter: blur(30%);
+            width: 10%;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+          
+           <img src="data:image/png;base64,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" <span>Benglore, Karnataka</span>
+            <div class="menu">
+                <a href="file:///C:/Users/HP%20LAP/Desktop/Be%20practical/front%20end/html5/orderfood.html"> For Order</a>
+                
+
+                <a href="file:///C:/Users/HP%20LAP/Desktop/Be%20practical/front%20end/html5/discount.html">Offers</a>
+                <a href="#">Help</a>
+                <a href="file:///C:/Users/HP%20LAP/Desktop/Be%20practical/front%20end/html5/login.html">Sign In</a>
+                <a href="#" class="cart">Cart</a>
+            </div>
+        </div>
+    </div>
+    
+                
+   
+   
+    <div class="main">
+        <h1>What's on your mind?</h1>
+        <div class="categories">
+            <div class="category">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6d11a0191124739.65c5e7b385b50.jpg" alt="Burger">
+                <p>Burger</p>
+            </div>
+            <div class="category">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXoxWaNUfz56cW3pZU_WFksuhoMuWXSAjAk494AjWVkcNpYSZukEMjz6h8I936U1SMVwo&usqp=CAU" alt="North Indian">
+                <p>North Indian</p>
+            </div>
+            <div class="category">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmuPH9TBI93-uVWfaPZMqb65dbW0CbnsUvRTwbLUL6JULxGtuMAQgg9-OR_sSLN6fNsXg&usqp=CAU" alt="Pizza">
+                <p>Pizza</p>
+            </div>
+            <div class="category">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQnJqnMjrcS7tOT4a7i6gzBME5vUOL8UwAi4vvdIjZE0gHepQYnTsw7Mh2thCqrLThwfE&usqp=CAU" alt="Rolls">
+                <p>Rolls</p>
+            </div>
+            <div class="category">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMdyhJWCdL3345N5M24kwLwNXv_OwUCVPSEVOok9PVO-4L17y1uclEOLTAZcwpP16iKzk&usqp=CAU" alt="Biryani">
+                <p>Biryani</p>
+            </div>
+            <div class="category">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlaW7_rQH22oXNIc-fRnFe2C5bBsdaOyNXCg-coU-wrUEDTnnEJFllu1dmqHk5gZPBBks&usqp=CAU" alt="Chinese">
+                <p>Chinese</p>
+            </div>
+            <div class="category">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkLUlo9XC11DKgHgiBE_zeclBa4VyKkq_ARpgo5KpooHwQSIe9yK7omDp4CakANjUYBm4&usqp=CAU" alt="South Indian">
+                <p>South Indian</p>
+            </div>
+            <div class="category">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYUB681ugk7eFsuqVr_VeirbqfAzelyrkkH25CgpyMyQRiKXckF0GAi4gPom7i7xtF7Aw&usqp=CAU" alt="Cakes">
+                <p>Cakes</p>
+            </div>
+            <div class="category">
+                <img src="https://thewoodenskillet.com/wp-content/uploads/2020/07/grilled-chicken-salad-recipe-5.jpg" alt="Salad">
+                <p>Salad</p>
+            </div>
+        </div>
+        <h2 style="text-align: left; color:rgba(53, 50, 50, 0.63)">Top restaurant chains in Vizag</h2>
+        <div class="restaurant-chains">
+            
+            <br>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVERzNJKlU_DbAJ1f5-WaO-o-ANHkso2bkzn3y_GqufbZj2JlHVot1sJNDblWrJUP_XHU&usqp=CAU" alt="Subway">
+                <p>Subway</p>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrD07gppus3rIy2bhjlvubfCYUVmf0ql5fATeDSijbEf0LxChwsh1DF-qzyLHbJkF9AqY&usqp=CAU" alt="Burger King">
+                <p>Burger King</p>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_G8qFix0NanZboq0a1798ym80zfh1jLtqIbrikXSjyyF-xLk_NGfcI_NkV989UaxjQGo&usqp=CAU" alt="Bunnys Family Restaurant">
+                <p>Bunnys Family Restaurant</p>
+            </div>
+            <div>
+                <img src="https://www.shutterstock.com/image-photo/bangkokthailand-9-january-2024-double-260nw-2410165155.jpg" alt="McDonald's Gourmet Burger">
+                <p>McDonald's Gourmet Burger</p>
+            </div>
+        </div>
+        <div style="align-items: center;" class="app">
+            <p>For better experience, download the Swiggy app now</p>
+            <br>
+            <br>
+            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" width="150"></a>
+            <a href="#"><img src="https://e7.pngegg.com/pngimages/634/320/png-clipart-app-store-apple-google-play-iphone-mid-autumn-lantern-text-logo-thumbnail.png" alt="App Store" width="150"></a>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            <h3>Swiggy</h3>
+            <p>&copy; 2024 Bundl Technologies Pvt. Ltd</p>
+        </div>
+        <div>
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Swiggy One</a></li>
+                <li><a href="#">Swiggy Instamart</a></li>
+                <li><a href="#">Swiggy Genie</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact us</h3>
+            <ul>
+                <li><a href="#">Help & Support</a></li>
+                <li><a href="#">Partner with us</a></li>
+                <li><a href="#">Ride with us</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Investor Relations</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>We deliver to:</h3>
+            <ul>
+                <li>Bangalore</li>
+                <li>Gurgaon</li>
+                <li>Hyderabad</li>
+                <li>Delhi</li>
+                <li>Mumbai</li>
+                <li>Pune</li>
+                <li><a href="#">589 cities</a></li>
+            </ul>
+        </div>
+        
+    </div>
+
+</body>
+</html>

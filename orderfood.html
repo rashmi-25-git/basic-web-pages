@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Swiggy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FF5722;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #FF5722;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0 15px;
+        }
+        .navbar .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #FF8A65;
+        }
+        .content {
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .content img {
+            width: 200px;
+            height: auto;
+        }
+        .content h1 {
+            margin: 20px 0;
+        }
+        .content p {
+            font-size: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 100%;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .buttons button {
+            text-align: center;
+            border-radius: 100%;
+            background-color: white
+            border: none;
+            color: rgb(158, 140, 140);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            gap: 5px;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Swiggy</a>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">About Swiggy</a>
+           <name="swiggy-options" id="swiggy-option-input" placeholder="About Swiggy">
+
+<datalist id="swiggy-options">
+    <option value="Swiggy Journey">
+    <option value="Our Team">
+    <option value="Careers">
+    <option value="Blogs">
+</datalist>
+ 
+            <div class="dropdown-content">
+                <a href="#">Swiggy Journey</a>
+                <a href="#">Our Team</a>
+                <a href="#">Careers</a>
+                <a href="#">Blogs</a>
+            </div>
+        </div>
+        <a href="#">Our Businesses</a>
+       
+
+        <a href="#">Newsroom</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Investor Relations</a>
+    </div>
+
+    <div class="content">
+        <marquee direction="right">
+            <img src="https://www.swiggy.com/about-us/wp-content/uploads/2024/04/DE-on-bike-2-2.png" width="800px" alt="Swiggy Delivery">
+        </marquee>
+       
+        <h1>About Swiggy</h1>
+        <p>Swiggy is a new-age consumer-first organization offering an easy-to-use convenience platform, accessible through a unified app.</p>
+       
+        
+    </div>
+    <div class="container">
+        <div class="buttons">
+            <button onclick="showContent('mission')">Mission</button>
+            <button onclick="showContent('vision')">Vision</button>
+            <button onclick="showContent('values')">Values</button>
+            <button onclick="showContent('walkthrough')">Walkthrough</button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <center>
+
+        <img src="https://img.freepik.com/premium-photo/3d-model-delivery-man-character_747552-20739.jpg?w=360" width="200px" style="border-radius: 100%;"
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="#"><h1>Swiggy Menu</h1></a>
+                
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for food items..." onkeyup="filterMenu()">
+    </div>
+    <div id="menuList">
+        <div class="menu-item">Pizza</div>
+        <div class="menu-item">Burger</div>
+        <div class="menu-item">Pasta</div>
+        <div class="menu-item">Sushi</div>
+        <div class="menu-item">Tacos</div>
+        <div class="menu-item">Salad</div>
+    </div>
+
+    <script>
+        function filterMenu() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const menuItems = document.querySelectorAll('.menu-item');
+
+            menuItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchInput)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <br>
+    <br>
+
+
+        <h2>Mission</h2>
+        <p>Our mission is to elevate the quality of life of the urban consumer by offering unparalleled convenience. Convenience is what makes us tick. It's what makes us get out of bed and say, "Let's do this."</p>
+    
+
+    
+        <h2>Vision</h2>
+        <p>Our vision is to become the go-to platform for all consumer needs, delivering delight with every interaction and transaction.</p>
+    
+
+    </center>
+           
+</body>
+</html>
+    </center>
+        
